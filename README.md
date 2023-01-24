@@ -6,6 +6,10 @@
 ## Technologies 
 [Java 11 (openjdk)](https://openjdk.org/projects/jdk/11/), [Maven](https://maven.apache.org/), [RabbitMQ](https://www.rabbitmq.com/)
 
+## sh folder
+
+The sh folder allows you to quickly launch docker commands to perform tasks
+
 ## Build project
 ```bash
 sh build

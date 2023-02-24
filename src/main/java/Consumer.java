@@ -7,9 +7,11 @@ public class Consumer {
 
 	private static final String EXCHANGE_NAME = "logs";
 
+	private static final String BROKER_HOST = System.getenv("broker_host");
+
 	public static void main(String[] argv) throws Exception {
 		ConnectionFactory factory = new ConnectionFactory();
-		factory.setHost("localhost");
+		factory.setHost(BROKER_HOST);
 		Connection connection = factory.newConnection();
 		Channel channel = connection.createChannel();
 

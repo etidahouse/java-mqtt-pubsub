@@ -7,9 +7,11 @@ public class Producer {
 	private static final String EXCHANGE_NAME = "logs";
 	private static final String ROUTING_KEY = "#my_route";
 
+	private static final String BROKER_HOST = System.getenv("broker_host");
+
 	public static void main(String[] argv) throws Exception {
 		ConnectionFactory factory = new ConnectionFactory();
-		factory.setHost("localhost");
+		factory.setHost(BROKER_HOST);
 		try (Connection connection = factory.newConnection(); Channel channel = connection.createChannel()) {
 			channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
 

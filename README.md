@@ -4,7 +4,7 @@
 [Docker](https://www.docker.com/)
 
 ## Technologies 
-[Java 11 (openjdk)](https://openjdk.org/projects/jdk/11/), [Maven](https://maven.apache.org/), [RabbitMQ](https://www.rabbitmq.com/)
+[Java 17 (openjdk)](https://openjdk.org/projects/jdk/17/), [Maven](https://maven.apache.org/), [RabbitMQ](https://www.rabbitmq.com/)
 
 ## sh folder
 

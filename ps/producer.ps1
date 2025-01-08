@@ -13,17 +13,17 @@ if (-not $networkExists) {
     docker network create $NETWORK_NAME
 }
 
-docker run -d -it --rm \
-    -v $WORKDING_DIR/app:/app \
-    --net $NETWORK_NAME \
-    -e broker_host=$CURRENT_DIR-broker \
-    --name $CONTAINER_RUNTIME_NAME \
+docker run -d -it --rm `
+    -v $WORKDING_DIR/app:/app `
+    --net $NETWORK_NAME `
+    -e broker_host=$CURRENT_DIR-broker `
+    --name $CONTAINER_RUNTIME_NAME `
     openjdk:17
 
 
-docker exec -it  \
-    -w /app \
-    $CONTAINER_RUNTIME_NAME \
+docker exec -it  `
+    -w /app `
+    $CONTAINER_RUNTIME_NAME `
     /bin/bash -c "java -cp /app/app-jar-with-dependencies.jar Producer" || {
         docker stop $CONTAINER_RUNTIME_NAME; exit 1
     }
